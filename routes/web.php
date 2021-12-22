@@ -24,6 +24,22 @@ Route::get('/', function () {
 Route::view('/contacts', 'users.contacts');
 
 
+Route::middleware(['auth', 'check.gmail'])->group(function () {
+    // Precisa estar autenticado e o e-mail ser gmail para conseguir acessar 🙂
+ 
+    Route::get('/', 'NomeController@metodo');
+ 
+    Route::get('outra-rota', 'NameController@methodTwo');
+});
+ 
+Route::group(['middleware' => ['auth', 'check.gmail']], function() {
+    // Precisa estar autenticado e o e-mail ser gmail para conseguir acessar 🙂
+ 
+    Route::get('/', 'NomeController@metodo');
+ 
+    Route::get('outra-rota', 'NameController@methodTwo');
+});
+
 
 
 Route::get('/date', [Date::class, 'render']);

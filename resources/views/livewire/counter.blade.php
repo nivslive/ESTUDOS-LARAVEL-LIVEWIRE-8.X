@@ -1,12 +1,13 @@
-<div>
-The whole world belongs to you.  <br>
+@extends('layouts.bootstrap')
+@section('content')
 
-    
-<button wire:click.prevent="increment">+</button>
+
+<div>
+<button wire:click="increment">+</button>
 
 <h1>{{$count}} </h1>
-<button wire:click.prevent="decrement">-</button>
-
-
+<button wire:click="decrement">-</button>
 
 </div>
+
+@endsection

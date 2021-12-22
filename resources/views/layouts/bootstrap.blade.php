@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -16,6 +18,7 @@
             @yield('content')
         </main>
     </div>
+
     @livewireScripts
 </body>
 </html>
